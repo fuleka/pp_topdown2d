@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://g1hry62pr07l"]
+
+[ext_resource type="PackedScene" uid="uid://ukd3negds4a2" path="res://Scenes/item/itemcontainer.tscn" id="1_upqrr"]
+[ext_resource type="Script" path="res://Scenes/item/dritybox.gd" id="2_hidok"]
+[ext_resource type="Texture2D" uid="uid://dgcmriujfsnfy" path="res://graphics/objects/box/lid.png" id="3_0glgo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nod5"]
+size = Vector2(361, 163)
+
+[node name="dritybox" instance=ExtResource("1_upqrr")]
+script = ExtResource("2_hidok")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_0glgo")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_2nod5")
