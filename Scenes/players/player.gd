@@ -14,6 +14,7 @@ func _process(_delta):
 	var direction = Input.get_vector("left","right","up","down")
 	velocity = direction * speed
 	move_and_slide()
+	Global.player_pos = global_position
 	#rotat 마우스쪽으로 캐릭터 회전
 	look_at(get_global_mouse_position())
 	
@@ -49,4 +50,20 @@ func _on_timer_timeout():
 
 func _on_granade_reload_timer_timeout():
 	can_grenade = true
+
+func add_item(type: String) -> void:
+	if type == 'laser':
+		Global.laser_amount += 5
+	
+	if type == 'granade':
+		Global.granade_amount += 1
+	
+	if type == 'health':
+		Global.health += 25
+		
+func hit():
+	print('player hit')
+	Global.health -= 10
+	print(Global.health)
+
 

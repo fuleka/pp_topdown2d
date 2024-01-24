@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctybwygwli8rg"]
+[gd_scene load_steps=6 format=3 uid="uid://ctybwygwli8rg"]
 
 [ext_resource type="PackedScene" uid="uid://ukd3negds4a2" path="res://Scenes/item/itemcontainer.tscn" id="1_6w1fe"]
 [ext_resource type="Script" path="res://Scenes/item/toilet.gd" id="2_fp56n"]
 [ext_resource type="Texture2D" uid="uid://c6ui1ur3qxhr5" path="res://graphics/objects/toilet.png" id="3_2vnu3"]
+[ext_resource type="Texture2D" uid="uid://bp251jsspmtj3" path="res://graphics/objects/lid.png" id="4_f338j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e3077"]
 radius = 100.648
@@ -10,8 +11,14 @@ radius = 100.648
 [node name="toilet" instance=ExtResource("1_6w1fe")]
 script = ExtResource("2_fp56n")
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CircleShape2D_e3077")
+
+[node name="DecoSprite" parent="." index="1"]
 texture = ExtResource("3_2vnu3")
 
-[node name="CollisionShape2D" parent="." index="1"]
-shape = SubResource("CircleShape2D_e3077")
+[node name="BaseSprite" parent="." index="2"]
+position = Vector2(0, 32)
+texture = ExtResource("4_f338j")
+
+[node name="Marker2D" type="Marker2D" parent="SpawnPoint" index="0"]

@@ -59,6 +59,17 @@ rotation = -1.5708
 position = Vector2(-900, 1170)
 rotation = 1.5708
 
+[node name="player" parent="." index="2"]
+position = Vector2(1109, -1)
+
+[node name="PointLight2D" type="PointLight2D" parent="player" index="8"]
+energy = 5.0
+texture = ExtResource("6_8qxn1")
+texture_scale = 0.5
+
+[node name="lightfananim" parent="light" index="0" instance=ExtResource("6_40hxt")]
+position = Vector2(816, 106)
+
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="4"]
 energy = 0.6
 blend_mode = 1
@@ -69,16 +80,5 @@ position = Vector2(1553, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exitgate" index="0"]
 position = Vector2(-67.5, 1)
 shape = SubResource("RectangleShape2D_dwnfc")
-
-[node name="player" parent="." index="6"]
-position = Vector2(1109, -1)
-
-[node name="PointLight2D" type="PointLight2D" parent="player" index="8"]
-energy = 5.0
-texture = ExtResource("6_8qxn1")
-texture_scale = 0.5
-
-[node name="lightfananim" parent="light" index="0" instance=ExtResource("6_40hxt")]
-position = Vector2(816, 106)
 
 [connection signal="body_entered" from="exitgate" to="." method="_on_exitgate_body_entered"]

@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Topdown"
-run/main_scene="res://Scenes/Levels/level.tscn"
+run/main_scene="res://Scenes/Levels/outside.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://globals/Global.gd"
+Transitionlayer="*res://globals/transitionlayer.tscn"
 
 [display]
 

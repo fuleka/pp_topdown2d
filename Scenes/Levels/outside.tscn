@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ds506fk3t5a6g"]
+[gd_scene load_steps=21 format=3 uid="uid://ds506fk3t5a6g"]
 
 [ext_resource type="PackedScene" uid="uid://c3ovv0x3cifds" path="res://Scenes/Levels/level.tscn" id="1_ygaba"]
 [ext_resource type="Script" path="res://Scenes/Levels/outside.gd" id="2_d3xlh"]
@@ -13,6 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://b7rnaa8wsegs3" path="res://Scenes/Levels/house.tscn" id="10_s0rvf"]
 [ext_resource type="PackedScene" uid="uid://dd3wiaaky17ns" path="res://Scenes/objects/walllight.tscn" id="11_knwd4"]
 [ext_resource type="PackedScene" uid="uid://fnjebncc0yye" path="res://Scenes/objects/gate.tscn" id="12_ps4vk"]
+[ext_resource type="PackedScene" uid="uid://cxqny5iiji63n" path="res://Scenes/item/item.tscn" id="14_eujjv"]
+[ext_resource type="PackedScene" uid="uid://ctybwygwli8rg" path="res://Scenes/item/toilet.tscn" id="15_uafaa"]
+[ext_resource type="PackedScene" uid="uid://g1hry62pr07l" path="res://Scenes/item/dritybox.tscn" id="16_aa0qq"]
+[ext_resource type="PackedScene" uid="uid://7deawcr5u57k" path="res://Scenes/enemy/scout.tscn" id="16_ifai3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ef6fy"]
 resource_name = "walls"
@@ -96,6 +100,64 @@ position = Vector2(1137, 196)
 [node name="gate" parent="." index="1" instance=ExtResource("12_ps4vk")]
 position = Vector2(481, -515)
 metadata/_edit_lock_ = true
+
+[node name="toilet" parent="." index="2" groups=["itemcontaniner"] instance=ExtResource("15_uafaa")]
+position = Vector2(1502, 421)
+collision_layer = 16
+
+[node name="dritybox" parent="." index="3" groups=["itemcontaniner"] instance=ExtResource("16_aa0qq")]
+position = Vector2(905, 869)
+rotation = 0.785398
+scale = Vector2(1, 1)
+
+[node name="dritybox2" parent="." index="4" groups=["itemcontaniner"] instance=ExtResource("16_aa0qq")]
+position = Vector2(1734, 1214)
+rotation = 0.785398
+scale = Vector2(1, 1)
+
+[node name="dritybox3" parent="." index="5" groups=["itemcontaniner"] instance=ExtResource("16_aa0qq")]
+position = Vector2(2402, 1002)
+rotation = 0.785398
+scale = Vector2(1, 1)
+
+[node name="dritybox4" parent="." index="6" groups=["itemcontaniner"] instance=ExtResource("16_aa0qq")]
+position = Vector2(2163, 1166)
+rotation = 0.785398
+scale = Vector2(1, 1)
+
+[node name="dritybox5" parent="." index="7" groups=["itemcontaniner"] instance=ExtResource("16_aa0qq")]
+position = Vector2(1354, 1209)
+rotation = 0.785398
+scale = Vector2(1, 1)
+
+[node name="dritybox6" parent="." index="8" groups=["itemcontaniner"] instance=ExtResource("16_aa0qq")]
+position = Vector2(1215, 1584)
+rotation = 0.785398
+scale = Vector2(1, 1)
+
+[node name="dritybox7" parent="." index="9" groups=["itemcontaniner"] instance=ExtResource("16_aa0qq")]
+position = Vector2(1737, 1627)
+rotation = 0.785398
+scale = Vector2(1, 1)
+
+[node name="dritybox8" parent="." index="10" groups=["itemcontaniner"] instance=ExtResource("16_aa0qq")]
+position = Vector2(2251, 1561)
+rotation = 0.785398
+scale = Vector2(1, 1)
+
+[node name="dritybox9" parent="." index="11" groups=["itemcontaniner"] instance=ExtResource("16_aa0qq")]
+position = Vector2(2664, 1372)
+rotation = 0.785398
+scale = Vector2(1, 1)
+
+[node name="scout" parent="enemy" index="0" instance=ExtResource("16_ifai3")]
+position = Vector2(131, 1488)
+
+[node name="player" parent="." index="15"]
+position = Vector2(123, 404)
+
+[node name="item" parent="." index="16" instance=ExtResource("14_eujjv")]
+position = Vector2(-204, 660)
 
 [connection signal="player_entered" from="ground/house" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="ground/house" to="." method="_on_house_player_exited"]
