@@ -9,7 +9,7 @@ var can_grenade: bool = true
 @export var max_speed: int = 500
 var speed: int = max_speed
 
-func _process(delta):
+func _process(_delta):
 	#input
 	var direction = Input.get_vector("left","right","up","down")
 	velocity = direction * speed
@@ -23,7 +23,8 @@ func _process(delta):
 	# laser shooting input
 	# 인풋 받으면 can_laser로 발사 가능한 상태인지 확인함. 레이저 포인트는 레이저가 발사될 위치고 3개 중 랜덤으로 생성함.
 	# 그 다음 시그널을 통해 레이저 발사에 필요한 정보인 플레이어 디렉션과, 생성할 위치를 레벨에 알리면, 레벨에서 생성해줌. 이후 움직이는 건 레이저 씬에서 함.
-	if Input.is_action_pressed("primay action") and can_laser:
+	if Input.is_action_pressed("primay action") and can_laser and Global.laser_amount > 0:
+		Global.laser_amount -= 1
 		can_laser = false
 		print('shootlaser')
 		var laser_markers = $LaserPoint.get_children()
@@ -34,7 +35,8 @@ func _process(delta):
 		$LaserPoint/Shootfire.emitting = true
 		
 	# 폭탄쏘는거, 컨트롤이나 마우스 우클
-	if Input.is_action_pressed("secondary action") and can_grenade:
+	if Input.is_action_pressed("secondary action") and can_grenade and Global.granade_amount > 0:
+		Global.granade_amount -= 1
 		can_grenade = false
 		print('grenade')
 		var granade_markers = $LaserPoint.get_children()

@@ -80,3 +80,5 @@ position = Vector2(1553, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exitgate" index="0"]
 position = Vector2(-67.5, 1)
 shape = SubResource("RectangleShape2D_dwnfc")
+
+[connection signal="body_entered" from="exitgate" to="." method="_on_exitgate_body_entered"]

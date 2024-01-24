@@ -9,6 +9,7 @@ func _on_player_granade(pos, direction):
 	granade.position = pos
 	granade.linear_velocity = direction * 1000
 	$projectile.add_child(granade)
+	$hud.update_granade()
 
 func _on_player_laser(pos, direction):
 	var laser = laser_scene.instantiate() as Area2D
@@ -16,6 +17,7 @@ func _on_player_laser(pos, direction):
 	laser.rotation_degrees = rad_to_deg(direction.angle())
 	laser.direction = direction
 	$projectile.add_child(laser)
+	$hud.update_laser()
 
 func _on_house_player_entered():
 	var my_tween = get_tree().create_tween()

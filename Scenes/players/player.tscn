@@ -43,7 +43,7 @@ texture = ExtResource("1_un3g5")
 shape = SubResource("CircleShape2D_i1rrf")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(106, 23)
+position = Vector2(91, 23)
 shape = SubResource("CircleShape2D_2wpth")
 
 [node name="Laser_shoot" type="Timer" parent="."]

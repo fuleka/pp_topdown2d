@@ -4,7 +4,8 @@
 [ext_resource type="Script" path="res://Scenes/projectile/laser.gd" id="1_smwbk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_17cwv"]
-height = 98.0
+radius = 6.99999
+height = 18.0
 
 [node name="laser" type="Area2D"]
 collision_layer = 8
@@ -16,7 +17,7 @@ rotation = 1.5708
 texture = ExtResource("1_ito8a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(32, 0)
+position = Vector2(65, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_17cwv")
 
