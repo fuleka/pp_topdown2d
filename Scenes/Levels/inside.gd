@@ -1,6 +1,6 @@
 extends Level_Parent
 
-var outside_scene: PackedScene = preload("res://Scenes/Levels/outside.tscn")
+#var outside_scene: PackedScene = preload("res://Scenes/Levels/outside.tscn")
 
 func _on_exitgate_body_entered(_body):
 	var tween = create_tween()
