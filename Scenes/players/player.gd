@@ -27,11 +27,9 @@ func _process(_delta):
 	if Input.is_action_pressed("primay action") and can_laser and Global.laser_amount > 0:
 		Global.laser_amount -= 1
 		can_laser = false
-		print('shootlaser')
 		var laser_markers = $LaserPoint.get_children()
 		var selected_laser = laser_markers[randi() % laser_markers.size()]
 		laser.emit(selected_laser.global_position, player_direction)
-		print(selected_laser.position, player_direction)
 		$Laser_shoot.start()
 		$LaserPoint/Shootfire.emitting = true
 		
@@ -39,7 +37,6 @@ func _process(_delta):
 	if Input.is_action_pressed("secondary action") and can_grenade and Global.granade_amount > 0:
 		Global.granade_amount -= 1
 		can_grenade = false
-		print('grenade')
 		var granade_markers = $LaserPoint.get_children()
 		var selected_granade = granade_markers[randi() % granade_markers.size()]
 		$GranadeReloadTimer.start()
